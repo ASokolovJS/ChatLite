@@ -1,0 +1,24 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+
+.mainCard {
+  height: 78vh;
+}
+
+.secondaryCard{
+  height: 15vh;
+}
+
+.profile {
+  height: 25vh;
+}
+
+.listChat{
+  height: 65vh;
+}
+
+.btnExit{
+  margin-top: 10vh;
+}
