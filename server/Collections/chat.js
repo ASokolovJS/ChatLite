@@ -5,9 +5,11 @@ import { MessageCollections} from "../../imports/api/messageCollections";
 const ChatMess = Class.create({
     name: "Message",
     collection: MessageCollections,
-    message: String,
-    createdId: String,
-    read: Boolean
+    fields: {
+        message: String,
+        createdId: String,
+        read: Boolean
+    }
 })
 
 export const Chat = Class.create({
