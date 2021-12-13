@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row } from "react-bootstrap";
 import { Meteor } from "meteor/meteor";
-import {Link} from "react-router-dom";
+import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
 export const Login = () => {
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function log(){
-   Meteor.loginWithPassword(userEmail, password)
+      event.preventDefault()
+   Meteor.loginWithPassword(userEmail, password, (err, res)=> err ? alert("Пользователь не найден") : FlowRouter.go('/'))
   }
 
    return (
@@ -31,9 +32,9 @@ export const Login = () => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <a href='/' className="btn btn-primary mt-3 mb-5" onClick={log}>
+          <Button className="btn btn-primary mt-3 mb-5" onClick={log}>
             Login
-          </a>
+          </Button>
         </Form>
         <div className="text-end">
             <h3>Нет аккаунта?</h3>

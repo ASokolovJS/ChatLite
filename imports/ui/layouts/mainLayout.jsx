@@ -1,16 +1,21 @@
 import React from "react";
-import {Col, Row} from "react-bootstrap";
+import {Col, Nav, Navbar, Row} from "react-bootstrap";
+import {Profile} from "../profile/Profile";
 
-export const mainLayout = ({content, profile, msgCard}) => {
+export const mainLayout = ({content, list, msgCard}) => {
     return(
+
         <Row>
-          <h1 className="text-center mb-5">Добро пожаловать в чат</h1>
+            <Navbar bg='primary' className='mb-3'>
+                <Navbar.Brand>Welcome</Navbar.Brand>
+                <Profile/>
+            </Navbar>
           <Col md={9}>
             {content()}
-            {msgCard()}
+              {msgCard()}
           </Col>
           <Col>
-            {profile()}
+              {list()}
           </Col>
         </Row>
     )

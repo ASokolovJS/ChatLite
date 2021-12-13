@@ -3,6 +3,9 @@ import { Card, Button, Row, Col, Form } from "react-bootstrap";
 
 
 export const SecondaryCard = () => {
+  let a = {
+    msg: "5432"
+  }
 
   return (
     <Card className="secondaryCard shadow mt-3">
@@ -12,14 +15,14 @@ export const SecondaryCard = () => {
             <Form.Control
               className='mt-2'
               type="text"
-              placeholder="Enter your message "
+              placeholder="Enter your message"
             />
           </Col>
           <Col md={2} className="text-center">
-            <Button className='mt-2'>Send</Button>
+            <Button className='mt-2' >Send</Button>
           </Col>
         </Row>
       </Form>
     </Card>
-  );
-};
+  )
+}

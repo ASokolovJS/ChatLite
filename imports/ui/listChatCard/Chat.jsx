@@ -1,16 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Meteor } from "meteor/meteor";
 import { useTracker } from "meteor/react-meteor-data";
-import { MessageCollections } from "../../api/messageCollections";
 import { Link, useLocation } from "react-router-dom";
 import { ListGroupItem, Badge } from "react-bootstrap";
 
 
 export const Chat = ({ chat }) => {
-  const msgCount = useTracker(() =>
-    MessageCollections.find({ userId: "/" + chat._id }).count()
-  );
-  const location = useLocation();
+
   const [count, setCount] = useState(msgCount);
   const [time, setTime] = useState("");
 

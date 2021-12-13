@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import { Meteor } from "meteor/meteor";
 import { Container, Form, Button, Row } from "react-bootstrap";
+import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
 export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
-  function registr(){
-    Meteor.call("Registration",
-      name,
+  function regUser(){
+    event.preventDefault()
+    Accounts.createUser({
+      username: name,
       email,
-      password
-    , (err, res) => {})
+      password,
+    },(err, res)=> err ? alert(err) : FlowRouter.go('/'))
   }
+
   return (
     <Container className='w-25'>
       <h1 className="text-center mt-5">Регистрация</h1>
@@ -38,7 +40,7 @@ export const Register = () => {
             name="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button variant="primary" className="mt-3 mb-5" onClick={registr}>
+          <Button variant="primary" className="mt-3 mb-5" onClick={regUser}>
             Зарегистрироваться
           </Button>
         </Form>
