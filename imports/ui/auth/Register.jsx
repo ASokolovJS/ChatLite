@@ -7,6 +7,13 @@ export const Register = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
+  function registr(){
+    Meteor.call("Registration",
+      name,
+      email,
+      password
+    , (err, res) => {})
+  }
   return (
     <Container className='w-25'>
       <h1 className="text-center mt-5">Регистрация</h1>
@@ -31,7 +38,7 @@ export const Register = () => {
             name="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button variant="primary" className="mt-3 mb-5" >
+          <Button variant="primary" className="mt-3 mb-5" onClick={registr}>
             Зарегистрироваться
           </Button>
         </Form>

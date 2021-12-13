@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Meteor } from "meteor/meteor";
 import { Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 
 export const Profile = () => {
   const logout = () => Meteor.logout();

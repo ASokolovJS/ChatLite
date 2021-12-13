@@ -6,7 +6,11 @@ import {Link} from "react-router-dom";
 export const Login = () => {
   const [userEmail, setUserEmail] = useState("");
   const [password, setPassword] = useState("");
-  
+
+  function log(){
+   Meteor.loginWithPassword(userEmail, password)
+  }
+
    return (
     <Container className='w-25'>
       <h3 className="text-center mt-5">Войти в Аккаунт</h3>
@@ -27,9 +31,9 @@ export const Login = () => {
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button className="mt-3 mb-5" variant="primary">
+          <a href='/' className="btn btn-primary mt-3 mb-5" onClick={log}>
             Login
-          </Button>
+          </a>
         </Form>
         <div className="text-end">
             <h3>Нет аккаунта?</h3>

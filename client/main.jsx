@@ -1,5 +1,6 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import Chat from "../imports/Collections/Сhat";
 import {mount} from 'react-mounter'
 import {FlowRouter} from 'meteor/ostrio:flow-router-extra';
 import {Login} from "../imports/ui/auth/Login";
@@ -11,11 +12,11 @@ import {Register} from "../imports/ui/auth/Register";
 import {Profile} from "../imports/ui/profile/Profile";
 import {SecondaryCard} from "../imports/ui/secondaryCard/SecondaryCard";
 
-
+window.Chat = Chat
 FlowRouter.route('/',{
     name: 'Main',
     action(){
-        if(Meteor.loggingIn()){
+        if(!Meteor.userId()){
             FlowRouter.redirect("/login")
         }else{
             mount(mainLayout,{
