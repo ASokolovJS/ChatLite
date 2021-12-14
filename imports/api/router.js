@@ -23,12 +23,12 @@ FlowRouter.route('/', {
 })
 
 
-FlowRouter.route('/:id', {
+FlowRouter.route('/chat/:id', {
   action() {
-    mount(mainLayout, {
-      content: () => <MainCard name={FlowRouter.getParam('id')}/>
-    })
-  }
+      mount(mainLayout, {
+        content: () => <MainCard name={FlowRouter.getParam('id')}/>
+      })
+    }
 })
 
 

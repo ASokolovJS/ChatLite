@@ -8,10 +8,10 @@ export const ListChat = () => {
         <Col>
           <h5>Чаты</h5>
           <hr/>
-          <a href='/Alex'>Alex</a><br/>
-          <a href='/Ivan'>Ivan</a><br/>
-          <a href='/Mark'>Mark</a><br/>
-          <a href='/Niko'>Niko</a>
+          <a href='/chat/Alex'>Alex</a><br/>
+          <a href='/chat/Ivan'>Ivan</a><br/>
+          <a href='/chat/Mark'>Mark</a><br/>
+          <a href='/chat/Niko'>Niko</a>
         </Col>
         <Col>
           <h5>Пользователи</h5>
