@@ -33,7 +33,7 @@ export const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button className="btn btn-primary mt-3 mb-5" onClick={log}>
-            Login
+            Войти
           </Button>
         </Form>
         <div className="text-end">

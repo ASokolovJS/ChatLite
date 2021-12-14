@@ -1,28 +1,31 @@
-import React from "react";
-import { Card, Button, Row, Col, Form } from "react-bootstrap";
+import React, {useState} from "react";
+import { Button, Form, InputGroup} from "react-bootstrap";
 
 
 export const SecondaryCard = () => {
-  let a = {
-    msg: "5432"
+  const [newMsg, setMsg]=useState('')
+
+  function send() {
+    event.preventDefault()
+    setMsg('')
   }
 
   return (
-    <Card className="secondaryCard shadow mt-3">
-      <Form>
-        <Row>
-          <Col className="text-center">
+    <div>
+      <Form className="secondaryCard m-3">
+          <InputGroup className="mb-3">
             <Form.Control
-              className='mt-2'
-              type="text"
-              placeholder="Enter your message"
+              placeholder="Введите ваше сообщение"
+              aria-label="Введите ваше сообщение"
+              aria-describedby="basic-addon2"
+              value={newMsg}
+              onChange={(e)=> {setMsg(e.target.value)}}
             />
-          </Col>
-          <Col md={2} className="text-center">
-            <Button className='mt-2' >Send</Button>
-          </Col>
-        </Row>
+            <Button variant="outline-primary" id="button-addon2" onClick={send}>
+              Отправить
+            </Button>
+          </InputGroup>
       </Form>
-    </Card>
+    </div>
   )
 }

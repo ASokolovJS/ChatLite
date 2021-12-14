@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Row, Col } from "react-bootstrap";
+import {Card, Row, Col} from "react-bootstrap";
 
 export const ListChat = () => {
   return (
@@ -7,11 +7,15 @@ export const ListChat = () => {
       <Row>
         <Col>
           <h5>Чаты</h5>
-          <hr />
+          <hr/>
+          <a href='/Alex'>Alex</a><br/>
+          <a href='/Ivan'>Ivan</a><br/>
+          <a href='/Mark'>Mark</a><br/>
+          <a href='/Niko'>Niko</a>
         </Col>
         <Col>
           <h5>Пользователи</h5>
-          <hr />
+          <hr/>
         </Col>
       </Row>
     </Card>

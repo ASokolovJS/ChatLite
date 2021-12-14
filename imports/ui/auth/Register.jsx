@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Container, Form, Button, Row } from "react-bootstrap";
+import React, {useState} from "react";
+import {Container, Form, Button, Row} from "react-bootstrap";
 import {FlowRouter} from "meteor/ostrio:flow-router-extra";
 
 export const Register = () => {
@@ -7,19 +7,19 @@ export const Register = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
 
-  function regUser(){
+  function regUser() {
     event.preventDefault()
     Accounts.createUser({
       username: name,
       email,
       password,
-    },(err, res)=> err ? alert(err) : FlowRouter.go('/'))
+    }, (err, res) => err ? alert(err) : FlowRouter.go('/'))
   }
 
   return (
     <Container className='w-25'>
       <h1 className="text-center mt-5">Регистрация</h1>
-      <hr />
+      <hr/>
       <Row className="justify-content-center mt-5">
         <Form>
           <Form.Label className="mt-3">Name</Form.Label>

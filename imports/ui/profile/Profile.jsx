@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
-import { Meteor } from "meteor/meteor";
-import {Card, Button, Nav} from "react-bootstrap";
+import React from "react";
+import {FlowRouter} from "meteor/ostrio:flow-router-extra";
+import {Meteor} from "meteor/meteor";
+import {Nav} from "react-bootstrap";
 
 
 export const Profile = () => {
-  const logout = () => Meteor.logout();
+  const logout = () => confirm('Вы действительно хотите выйти?') ? Meteor.logout(() => FlowRouter.go('/login')) : console.log("Вы не вышли");
 
   return (
-     <Nav className='justify-content-end'>
-         <Nav.Link href='/login' onClick={logout}>Exit</Nav.Link>
-     </Nav>
-    );
- };
+    <Nav>
+      <Nav.Item>
+        <Nav.Link onClick={logout}>Выйти</Nav.Link>
+      </Nav.Item>
+    </Nav>
+  );
+};

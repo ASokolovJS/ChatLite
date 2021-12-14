@@ -1,23 +1,25 @@
 import React from "react";
-import {Col, Nav, Navbar, Row} from "react-bootstrap";
+import {Col, Navbar, Row} from "react-bootstrap";
 import {Profile} from "../profile/Profile";
+import {ListChat} from "../listChatCard/ListChat";
 
-export const mainLayout = ({content, list, msgCard}) => {
-    return(
-
-        <Row>
-            <Navbar bg='primary' className='mb-3'>
-                <Navbar.Brand>Welcome</Navbar.Brand>
-                <Profile/>
-            </Navbar>
-          <Col md={9}>
-            {content()}
-              {msgCard()}
-          </Col>
-          <Col>
-              {list()}
-          </Col>
-        </Row>
-    )
+export const mainLayout = ({content}) => {
+  return (
+    <div>
+      <Navbar className='mb-3 justify-content-end'>
+        <Navbar.Brand>Добро пожаловать!</Navbar.Brand>
+        <Profile/>
+      </Navbar>
+      <hr/>
+      <Row>
+        <Col md={9}>
+          {content()}
+        </Col>
+        <Col>
+          <ListChat/>
+        </Col>
+      </Row>
+    </div>
+  )
 }
 
