@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { Button, Form, InputGroup} from "react-bootstrap";
+import ChatMess from "../../Collections/ChatMess";
 
 
 export const SecondaryCard = () => {
@@ -7,6 +8,10 @@ export const SecondaryCard = () => {
 
   function send() {
     event.preventDefault()
+    const messages = new ChatMess
+    messages.message = newMsg
+    messages.save()
+    console.log(messages)
     setMsg('')
   }
 

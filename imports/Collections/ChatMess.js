@@ -1,6 +1,5 @@
 import {Class} from "meteor/jagi:astronomy";
 
-
 const ChatMess = Class.create({
     name: "ChatMess",
     collection: new Mongo.Collection('messages'),
