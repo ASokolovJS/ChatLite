@@ -1,7 +1,6 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../imports/api/router'
-<<<<<<< HEAD
-=======
+import Chats from "../imports/classes/Сhat";
 
->>>>>>> origin/master
+window.Chats = Chats

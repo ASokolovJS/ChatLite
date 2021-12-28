@@ -1,10 +1,10 @@
 import { Class } from 'meteor/jagi:astronomy';
-import { Mongo} from "meteor/mongo";
 import ChatMess from "./ChatMess";
+import Chats from "../Collections/Chats";
 
 const Chat = Class.create({
     name: "Chat",
-    collection: new Mongo.Collection("chats"),
+    collection: Chats,
     fields: {
         msg: [ChatMess],
         user: String
