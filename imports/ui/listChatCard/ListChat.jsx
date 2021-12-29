@@ -2,15 +2,16 @@ import React from "react";
 import {Meteor} from 'meteor/meteor'
 import {Card, Row, Col} from "react-bootstrap";
 import Chat from "../../classes/Сhat";
-import Chats from "../../Collections/Chats";
+
 
 export const ListChat = () => {
-  const chatss= new Chat()
+  const chats= new Chat()
+
  function createChat () {
-   chatss.user = Meteor.userId()
-   chatss.msg = []
-   chatss.save()
-   console.log(Chats.findOne({user: Meteor.userId()}))
+   chats.user = "1"
+   chats.msg = []
+   chats.save()
+   console.log(Chat.findOne({id: "1"}))
  }
 
   return (
@@ -18,7 +19,6 @@ export const ListChat = () => {
       <Row>
         <Col>
           <h5>Чаты</h5>
-
           <hr/>
         </Col>
         <Col>

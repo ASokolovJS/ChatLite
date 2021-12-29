@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Meteor } from "meteor/meteor";
-import { useTracker } from "meteor/react-meteor-data";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ListGroupItem, Badge } from "react-bootstrap";
 
 

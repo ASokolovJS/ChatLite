@@ -2,19 +2,23 @@ import React, {useState} from "react";
 import { Button, Form, InputGroup} from "react-bootstrap";
 import ChatMess from "../../classes/ChatMess";
 import {Meteor} from "meteor/meteor";
+import Chat from "../../classes/Сhat";
 
 
 export const SecondaryCard = () => {
   const [newMsg, setMsg]=useState('')
+  let newMess = new ChatMess()
+  const chat = Chat.findOne()
 
   function create() {
-    let newMess = new ChatMess()
+
     newMess.createdId = Meteor.userId()
     newMess.message = newMsg
     console.log(newMess)
+    // chat.msg.push(newMess)
+    console.log(chat)
     setMsg('')
 }
-
 
   return (
     <div>
